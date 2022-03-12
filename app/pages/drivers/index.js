@@ -1,4 +1,4 @@
-import { usePaginatedQuery, useQuery, useRouter } from "blitz"
+import { Link, usePaginatedQuery, useQuery, useRouter } from "blitz"
 import getDrivers from "app/drivers/queries/getDrivers"
 import CustomizedTables from "app/components/Table"
 
@@ -22,6 +22,7 @@ const DriversPage = (props) => {
                     <p>No drivers found</p>
                 )}
                 <CustomizedTables columns={columns} data={drivers} />
+                <Link href={'./drivers/create'}>Create New</Link>
             </main>
         </div>
     </>
