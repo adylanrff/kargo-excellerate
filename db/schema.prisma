@@ -12,49 +12,47 @@ generator client {
 
 // --------------------------------------
 
-model User {
+model Truck {
+  id             Int        @id @default(autoincrement())
+  truckName      String
+  licenseNumber  String
+  truckType      String
+  productionYear Int
+  stnk           String
+  kir            String
+  createdAt      DateTime   @default(now())
+  status         String
+  updatedAt      DateTime   @updatedAt
+  shipments      Shipment[]
+}
+
+model Driver {
+  id            Int        @id @default(autoincrement())
+  driverName    String
+  phoneNumber   String
+  idCard        String
+  driverLicense String
+  status        String
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+  shipments     Shipment[]
+}
+
+model Shipment {
   id             Int      @id @default(autoincrement())
+  shipmentNumber String   @default("")
+  licenseNumber  String   @default("")
+  driverName     String   @default("")
+  origin         String
+  destination    String
+  loadingDate    DateTime
+  status         String
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
-  name           String?
-  email          String   @unique
-  hashedPassword String?
-  role           String   @default("USER")
-
-  tokens   Token[]
-  sessions Session[]
-}
-
-model Session {
-  id                 Int       @id @default(autoincrement())
-  createdAt          DateTime  @default(now())
-  updatedAt          DateTime  @updatedAt
-  expiresAt          DateTime?
-  handle             String    @unique
-  hashedSessionToken String?
-  antiCSRFToken      String?
-  publicData         String?
-  privateData        String?
-
-  user   User? @relation(fields: [userId], references: [id])
-  userId Int?
-}
-
-model Token {
-  id          Int      @id @default(autoincrement())
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  hashedToken String
-  type        String
-  // See note below about TokenType enum
-  // type        TokenType
-  expiresAt   DateTime
-  sentTo      String
-
-  user   User @relation(fields: [userId], references: [id])
-  userId Int
-
-  @@unique([hashedToken, type])
+  truck          Truck?   @relation(fields: [truckId], references: [id])
+  truckId        Int?
+  driver         Driver?  @relation(fields: [driverId], references: [id])
+  driverId       Int?
 }
 
 // NOTE: It's highly recommended to use an enum for the token type
