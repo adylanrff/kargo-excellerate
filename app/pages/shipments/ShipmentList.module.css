@@ -1,11 +1,36 @@
 .navbar {
-  height: 30%;
+  height: 100px;
   width: 100vw;
-  background: teal;
+  background: transparent;
+}
+
+.headers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter {
+  position: relative;
+  margin: 20px;
+  left: 400px;
 }
 
 .main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .table {
+  min-width: 700px;
+  height: 400px;
+  background: transparent;
+}
+
+.footer {
+  position: absolute;
+  height: 100px;
+  width: 100vw;
+  background: transparent;
 }
