@@ -1,7 +1,9 @@
-export default (props) => {
+import React from 'react'
+
+const index = () => {
     return (
-        <div>
-            <h1>Shipments</h1>
-        </div>
+        <div>S</div>
     )
 }
+
+export default index
