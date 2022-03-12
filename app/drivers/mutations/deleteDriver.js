@@ -4,7 +4,7 @@ import { z } from "zod"
 const DeleteDriver = z.object({
   id: z.number(),
 })
-export default resolver.pipe(resolver.zod(DeleteDriver), resolver.authorize(), async ({ id }) => {
+export default resolver.pipe(resolver.zod(DeleteDriver), async ({ id }) => {
   // TODO: in multi-tenant app, you must add validation to ensure correct tenant
   const driver = await db.driver.deleteMany({
     where: {

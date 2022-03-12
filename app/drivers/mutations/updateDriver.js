@@ -3,11 +3,13 @@ import db from "db"
 import { z } from "zod"
 const UpdateDriver = z.object({
   id: z.number(),
-  name: z.string(),
+  driverName: z.string(),
+  phoneNumber: z.string(),
+  idCard: z.string(),
+  driverLicense: z.string(),
 })
 export default resolver.pipe(
   resolver.zod(UpdateDriver),
-  resolver.authorize(),
   async ({ id, ...data }) => {
     // TODO: in multi-tenant app, you must add validation to ensure correct tenant
     const driver = await db.driver.update({

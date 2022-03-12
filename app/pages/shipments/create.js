@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form"
 
-export default function Create() {
+export default function ShipmentsCreate() {
     const {
         register,
         handleSubmit,
