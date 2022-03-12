@@ -4,7 +4,7 @@ import { RoleContext } from 'app/lib/context';
 const Truck = () => {
     const { role } = useContext(RoleContext);
     return (
-        <div>{role}</div>
+        <div>{role === 'Transporter' ? 'banaa' : 'aa'}</div>
     )
 }
 
