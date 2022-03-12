@@ -29,27 +29,6 @@ const DriversPage = (props) => {
                 ))}
             </main>
         </div>
-        <style>{`
-      
-      .form-trucks{
-         width: 30vw;
-        display:flex;
-        flex-direction:column;
-        justify-content: space-between;
-        
-        .form-label{
-        width:30vw;
-        flex-direction:column;
-        justify-content: space-between;
-        }
-      }
-      .submit{
-        float:right;
-        width:4vw;
-        display:flex;
-        align-itemst:end;
-      }
-      `}</style>
     </>
     )
 }

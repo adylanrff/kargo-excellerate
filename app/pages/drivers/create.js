@@ -16,7 +16,7 @@ export default function DriversCreate() {
                     <div className="form-label">
                         {" "}
                         <label>Driver Name</label>
-                        <input type="text" placeholder="Origin" {...register("Driver Name", {})} />
+                        <input type="text" placeholder="Driver name" {...register("Driver Name", {})} />
                     </div>
                     <div className="form-label">
                         {" "}
