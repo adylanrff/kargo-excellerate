@@ -1,0 +1,6 @@
+.button-style {
+  background: red;
+}
+.button-style > span {
+  padding: 10;
+}
