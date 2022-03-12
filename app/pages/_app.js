@@ -1,5 +1,4 @@
 import { ErrorBoundary, ErrorComponent, AuthenticationError, AuthorizationError, useQueryErrorResetBoundary } from "blitz";
-import LoginForm from "app/auth/components/LoginForm";
 export default function App({
   Component,
   pageProps
