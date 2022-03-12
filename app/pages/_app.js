@@ -11,12 +11,9 @@ export default function App({
 }
 
 function RootErrorFallback({
-  error,
-  resetErrorBoundary
+  error
 }) {
-  if (error instanceof AuthenticationError) {
-    return <LoginForm onSuccess={resetErrorBoundary} />;
-  } else if (error instanceof AuthorizationError) {
+  if (error instanceof AuthorizationError) {
     return <ErrorComponent statusCode={error.statusCode} title="Sorry, you are not authorized to access this" />;
   } else {
     return <ErrorComponent statusCode={error.statusCode || 400} title={error.message || error.name} />;
