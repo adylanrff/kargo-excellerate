@@ -1,11 +1,13 @@
 import { usePaginatedQuery, useQuery, useRouter } from "blitz"
 import getDrivers from "app/drivers/queries/getDrivers"
+import CustomizedTables from "app/components/Table"
 
 const ITEMS_PER_PAGE = 100
 
 const DriversPage = (props) => {
     const router = useRouter()
     const page = Number(router.query.page) || 0
+    const columns = ["driverName", "phoneNumber", "idCard", "driverLicense"]
 
     const [{ drivers, hasMore }] = usePaginatedQuery(getDrivers, {
         orderBy: { id: "asc" },
@@ -19,14 +21,7 @@ const DriversPage = (props) => {
                 {drivers.length === 0 && (
                     <p>No drivers found</p>
                 )}
-                {drivers.map(driver => (
-                    <div>
-                        <p>{driver.driverName}</p>
-                        <p>{driver.phoneNumber}</p>
-                        <p>{driver.idCard}</p>
-                        <p>{driver.driverLicense}</p>
-                    </div>
-                ))}
+                <CustomizedTables columns={columns} data={drivers} />
             </main>
         </div>
     </>
