@@ -92,3 +92,10 @@ button {
 .navbar li {
   border-radius: 50%;
 }
+input {
+  padding: 10px;
+  width: 200px;
+  font-family: "PlusJakarta", sans-serif;
+  border: 0;
+  border-bottom: 1px solid #000;
+}
