@@ -20,7 +20,7 @@ export default function Create() {
             <input type="number" placeholder="License Number" {...register("License Number", {})} />
           </div>
 
-          <div>
+          <div className="form-label">
             {" "}
             <label>License Type</label>
             <select {...register}>
@@ -28,7 +28,7 @@ export default function Create() {
               <option value="yellow">yellow</option>
             </select>
           </div>
-          <div>
+          <div className="form-label">
             {" "}
             <label>Truck Type</label>
             <select {...register}>
@@ -37,7 +37,7 @@ export default function Create() {
               <option value="CDE">CDE</option>
             </select>
           </div>
-          <div>
+          <div className="form-label">
             <label>Production Year</label>
             <input
               type="number"
@@ -45,30 +45,49 @@ export default function Create() {
               {...register("Production Year", {})}
             />
           </div>
-          <div>
+          <div className="form-label">
             {" "}
             <label>SIM</label>
             <input type="file" placeholder="STNK" {...register("STNK", {})} />
           </div>
-          <div>
+          <div className="form-label">
             <label>KIR </label>
             <input type="file" placeholder="KIR" {...register("KIR", {})} />
           </div>
 
-          <input className="submit" type="submit" />
+          <input className="submit" type="submit" value="Save Unit" />
         </form>
       </main>
       <style>{`
+
+      main{
+        padding: 5rem 0;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+      }
       .form-trucks{
          width: 30vw;
         display:flex;
         flex-direction:column;
         justify-content: space-between;
 
+        .form-label{
+        width:30vw;
+        flex-direction:column;
+        justify-content: space-between;
+        }
       }
 
-      .form-label{
 
+
+      .submit{
+        float:right;
+        width:4vw;
+        display:flex;
+        align-itemst:end;
       }
       `}</style>
     </div>
