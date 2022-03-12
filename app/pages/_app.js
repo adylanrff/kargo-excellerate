@@ -1,12 +1,14 @@
 import './styles.css'
 import Navbar from '../components/Navbar'
-import { StyledEngineProvider } from '@mui/material/styles';
+import { RoleProvider } from '../lib/context'
 
 
 function MyApp({ Component, pageProps }) {
-  return (<StyledEngineProvider injectFirst>
-    <Navbar />
-    <Component {...pageProps} />
-  </StyledEngineProvider>)
+  return (
+    <RoleProvider>
+      <Navbar />
+      <Component {...pageProps} />
+    </RoleProvider>
+  )
 }
 export default MyApp

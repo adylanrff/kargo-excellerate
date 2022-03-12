@@ -1,23 +1,23 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Image, Link } from "blitz";
 import Layout from "app/core/layouts/Layout";
 import logo from "public/logo.png";
 
 import { useForm } from 'react-hook-form';
-// import RoleContext from '../lib/context'
+import { RoleContext } from '../lib/context'
 
 import { useRouter } from "next/router";
 
 const Home = () => {
   const { register, handleSubmit } = useForm();
-  const router = useRouter()
 
-  // const [roleName, setRole] = useState('');
-  // const { role } = useContext(RoleContext);
+  const router = useRouter()
+  const role = useContext(RoleContext);
 
   function onSubmitData(data) {
+    role.setRole(data.role)
     if (data.role === 'Shipper') {
-      router.push(`/shippments`)
+      router.push(`/truck`)
     } else {
       router.push(`/truck`)
     }

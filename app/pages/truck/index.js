@@ -1,8 +1,10 @@
-import React from 'react'
+import { useContext } from 'react'
+import { RoleContext } from 'app/lib/context';
 
 const Truck = () => {
+    const { role } = useContext(RoleContext);
     return (
-        <div>Truck</div>
+        <div>{role}</div>
     )
 }
 
