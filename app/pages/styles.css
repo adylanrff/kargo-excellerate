@@ -1,0 +1,94 @@
+@font-face {
+  font-family: "PlusJakarta";
+  src: url("/fonts/PlusJakartaSans-Regular.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PlusJakarta";
+  src: url("/fonts/PlusJakartaSans-Medium.ttf");
+  font-style: medium;
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PlusJakarta";
+  src: url("/fonts/PlusJakartaSans-Bold.ttf");
+  font-style: bold;
+  font-weight: 700;
+  font-display: swap;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "PlusJakarta", sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  margin-top: 50px;
+}
+.push-left {
+  margin-left: auto;
+  align-items: left;
+}
+.navbar {
+  height: 70px;
+  width: 80%;
+  background-color: white;
+  color: black;
+  position: fixed;
+  top: 0;
+  margin: 30px auto;
+  border-radius: 100px;
+  padding: 20px;
+  font-weight: bold;
+  top: 40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(161, 194, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  font-family: "PlusJakarta", sans-serif;
+}
+button.btn-navbar {
+  background-color: inherit;
+}
+.btn,
+button {
+  background-color: var(--color-button);
+  border: none;
+  color: var(--color-text);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: "PlusJakarta", sans-serif;
+  font-weight: bold;
+  border-radius: 100px;
+  cursor: pointer;
+  margin: 0.5rem 1rem 0.5rem 0;
+}
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.navbar img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.navbar li {
+  border-radius: 50%;
+}

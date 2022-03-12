@@ -1,20 +1,48 @@
-import { Suspense } from "react";
+import { useState, useContext } from "react";
 import { Image, Link } from "blitz";
 import Layout from "app/core/layouts/Layout";
 import logo from "public/logo.png";
 
+import { useForm } from 'react-hook-form';
+import { RoleContext } from '../lib/context'
+
+import { useRouter } from "next/router";
+
 const Home = () => {
+  const { register, handleSubmit } = useForm();
+
+  const router = useRouter()
+  const role = useContext(RoleContext);
+
+  function onSubmitData(data) {
+    role.setRole(data.role)
+    if (data.role === 'Shipper') {
+      router.push(`/truck`)
+    } else {
+      router.push(`/truck`)
+    }
+  }
+
   return <div className="container">
     <main>
       <div className="logo">
         <Image src={logo} alt="blitzjs" />
       </div>
-      a
+      <form onSubmit={handleSubmit(onSubmitData)}>
+        <label> Transporter
+          <input name="role" {...register('role')} type="radio" value="Transporter" />
+        </label>
+        <label> Shipper
+          <input name="role" {...register('role')} type="radio" value="Shipper" />
+        </label>
+
+        <input type="submit" />
+      </form>
     </main>
 
     <footer>
       <a href="https://blitzjs.com?utm_source=blitz-new&utm_medium=app-template&utm_campaign=blitz-new" target="_blank" rel="noopener noreferrer">
-        Powered by Blitz.js
+        Powered by Squad #1
       </a>
     </footer>
 
