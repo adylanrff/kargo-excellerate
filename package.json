@@ -32,6 +32,8 @@
     "react-data-table-component": "7.4.7",
     "react-dom": "18.0.0-alpha-5ca4b0433-20211020",
     "react-hook-form": "7.27.1",
+    "react-modal": "3.14.4",
+    "styled-components": "5.3.3",
     "zod": "3.13.4"
   },
   "devDependencies": {
