@@ -11,17 +11,17 @@ const Navbar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/">
+                    <Link href="/shipments">
                         <button className="btn-navbar">Shipments</button>
                     </Link>
                 </li>
                 <li>
-                    <Link href="/">
+                    <Link href="/trucks">
                         <button className="btn-navbar">Trucks</button>
                     </Link>
                 </li>
                 <li>
-                    <Link href="/auth">
+                    <Link href="/drivers">
                         <button className="btn-blue">Drivers</button>
                     </Link>
                 </li>

@@ -17,9 +17,9 @@ const Home = () => {
   function onSubmitData(data) {
     role.setRole(data.role)
     if (data.role === 'Shipper') {
-      router.push(`/truck`)
+      router.push(`/shipments`)
     } else {
-      router.push(`/truck`)
+      router.push(`/trucks`)
     }
   }
 
